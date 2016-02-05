@@ -8,7 +8,8 @@ basé sur Polymer et Material Design
 
 
 ## Chapitres
-  - 01: Les composants Web (Web Components)
+  - [01: Les composants Web (Web Components)] [@chapitre01]
 
 
 [@zakaria]:mailto:z.amarifi@dm73.net
+[@chapitre01]:chapitres/01-web-components/presentation
