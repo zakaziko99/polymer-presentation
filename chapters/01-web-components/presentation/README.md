@@ -1,4 +1,4 @@
-# Chapitre 01: Les composants web (Web Components)
+# Chapitre 01:\s\s Les composants web (Web Components)
 > Une présentation sur l'histoire des composants web, créée à l'aide de l'outil [Bespoke.js](http://markdalgleish.com/projects/bespoke.js)
 
 ## Sommaire
