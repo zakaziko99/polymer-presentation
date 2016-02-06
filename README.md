@@ -12,4 +12,4 @@ basé sur Polymer et Material Design
 
 
 [@zakaria]:mailto:z.amarifi@dm73.net
-[@chapitre01]:chapitres/01-web-components/presentation
+[@chapitre01]:chapters/01-web-components/presentation
