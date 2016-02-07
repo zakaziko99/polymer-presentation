@@ -5,21 +5,44 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
     title Web Components
 
+    link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900')
     link(rel='stylesheet', type='text/css', href='build/build.css')
 
   body
 
     article
 
-      section.slide-home(data-bespoke-backdrop='slide-home-container' data-bespoke-hash='accueil')
-        h3.top-main Formation Polymer 2016
-        div.logo
-          img(src="images/polymer.svg" width="180" alt="Polymer Logo")
-        h1 Chapitre 1: les composants web
-          span (Web Components)
-        div.bottom-main
-          p Présenté par <strong>Zakaria Amarifi</strong>
-          p 2016 &copy; Development Media 73
+      section.slide-home(data-bespoke-backdrop='slide-home-container', data-bespoke-hash='presentation')
+        div.container-home
+          div.logo
+            img(src="images/polymer.svg" width="300" alt="Polymer Logo")
+          h1.much-bigger Formation Polymer
+            small (v 1.x.x)
+          div.bottom-main
+            p Présenté par <strong>Zakaria Amarifi</strong>
+            p 2016 &copy; <span>Development Media 73</span>
+
+      section(data-bespoke-hash='sommaire')
+        h2.bullet Sommaire
+        ul
+          li Histoire des composants web (Web Components)
+          li Tour rapide sur quelques notions en Polymer
+          li Création d'un projet en Polymer<br>- structure, organisation<br>- taches automatisés<br>- clean coding
+          li Polymer et stockage des données
+          li Le mode Offline
+          li Conception des animations
+          li Performance et optimisation
+
+      section.slide-home(data-bespoke-backdrop='slide-home-container', data-bespoke-hash='accueil')
+        div.container-home
+          h3.top-main Formation Polymer 2016
+          div.logo
+            img(src="images/polymer.svg" width="180" alt="Polymer Logo")
+          h1 <span class="chapter">Chapitre 1</span> <br>Les composants web
+            span.highlight (Web Components)
+          div.bottom-main
+            p Présenté par <strong>Zakaria Amarifi</strong>
+            p 2016 &copy; <span>Development Media 73</span>
 
       section
         h2 Keyboard Interaction
