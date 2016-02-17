@@ -65,9 +65,20 @@ html
             p Présenté par <strong>Zakaria Amarifi</strong>
             p 2016 &copy; <span>Development Media 73</span>
 
-      section
-        h2 Keyboard Interaction
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-keys">bespoke-keys</a>
+      section(data-bespoke-hash='histoire')
+        h2.bullet Un composant web aujourd'hui
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;link rel="stylesheet" type="text/css" href="datepicker.css" /&gt;
+            &lt;script type="text/javascript" src="datepicker.js" /&gt;&lt;/script&gt;
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;div data-widget="datepicker" /&gt;&lt;/div&gt;
+        pre.bullet.no-scroll
+          code.language-javascript.
+            $(function() {
+              $('[data-widget="datepicker"]').datepicker();
+            });
 
       section
         h2 Touch Interaction
