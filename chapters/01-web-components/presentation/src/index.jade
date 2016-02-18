@@ -66,19 +66,58 @@ html
             p 2016 &copy; <span>Development Media 73</span>
 
       section(data-bespoke-hash='histoire')
-        h2.bullet Un composant web aujourd'hui
+        h2.bullet  Un composant web aujourd'hui
+        p.bullet
+          img(src="images/datepicker.png" alt="jQuery datepicker")
+
+      section(data-bespoke-hash='old-web-component')
+        h2.bullet Old School manière
         pre.bullet.no-scroll
           code.language-markup.
-            &lt;link rel="stylesheet" type="text/css" href="datepicker.css" /&gt;
-            &lt;script type="text/javascript" src="datepicker.js" /&gt;&lt;/script&gt;
+            &lt;link rel="stylesheet" href="datepicker.css" /&gt;
+            &lt;script src="datepicker.js" /&gt;&lt;/script&gt;
         pre.bullet.no-scroll
           code.language-markup.
-            &lt;div data-widget="datepicker" /&gt;&lt;/div&gt;
+            &lt;input type="text" data-widget="datepicker" /&gt;
         pre.bullet.no-scroll
           code.language-javascript.
             $(function() {
-              $('[data-widget="datepicker"]').datepicker();
+              $('input[data-widget="datepicker"]').datepicker();
             });
+
+      section(data-bespoke-hash='old-web-component-issues')
+        h2.bullet C'est Nickel ?
+        pre.bullet.no-scroll
+          code.language-javascript.
+            // Modal au contenu interactive
+            var datepickerHTML = [
+                '&lt;input type="text" data-widget="datepicker" ',
+                  'id="newDatepicker" /&gt;'
+              ].join('');
+
+            $('div.modal .modal-body p').html(datepickerHTML);
+        pre.bullet.no-scroll
+          code.language-javascript.
+            // encore une fois
+            $('#newDatepicker').datepicker();
+
+      section(data-bespoke-hash='old-web-component-markup')
+        h2.bullet C'est le seul problème ?
+        pre.bullet.no-scroll.streched-code
+          code.language-markup.
+            &lt;div id="ui-datepicker-div" class="ui-datepicker ui-widget
+                ui-widget-content ui-helper-clearfix ui-corner-all"&gt;
+                &lt;div class="ui-datepicker-header
+                    ui-widget-header ui-helper-clearfix ui-corner-all"&gt;
+                    &lt;div class="ui-datepicker-title"&gt;
+                        &lt;span class="ui-datepicker-month"&gt;Mars&lt;/span&gt;
+                        &lt;span class="ui-datepicker-year"&gt;2016&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;table class="ui-datepicker-calendar"&gt;
+                    ...
+                &lt;/table&gt;
+            &lt;/div&gt;
 
       section
         h2 Touch Interaction
