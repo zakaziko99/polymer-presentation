@@ -54,7 +54,7 @@ html
           li Les animations et transitions
           li Performance et optimisation
 
-      section.slide-home(data-bespoke-backdrop='slide-home-container', data-bespoke-hash='accueil')
+      section.slide-home(data-bespoke-backdrop='slide-home-container', data-bespoke-hash='chapitre')
         div.container-home
           h3.top-main Formation Polymer 2016
           div.logo
@@ -64,6 +64,11 @@ html
           div.bottom-main
             p Présenté par <strong>Zakaria Amarifi</strong>
             p 2016 &copy; <span>Development Media 73</span>
+
+      section(data-bespoke-hash='accueil')
+        h2 Web Components
+        p
+          img(src="images/web-components.svg" width="360" alt="Web Components")
 
       section(data-bespoke-hash='histoire')
         h2.bullet  Un composant web aujourd'hui
@@ -243,7 +248,9 @@ html
             /* ça marchera si y'a des hooks proposés */
 
       section(data-bespoke-hash='web-components-resume')
-        h2.bullet Web Components
+        h2 Web Components
+        p.bullet
+          img(src="images/web-components.svg" width="120" alt="Web Components")
         ul
           li Simplicité (Interaction avec les autres éléments)
           li Stabilité (Api protégé)
