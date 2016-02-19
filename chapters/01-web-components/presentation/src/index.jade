@@ -238,7 +238,7 @@ html
       section(data-bespoke-hash='web-components-shadow-dom-2')
         h2 Shadow DOM
         p.bullet leur point fort ...
-        h3.bullet ENCAPSULATION CSS
+        h3.bullet ENCAPSULATION CSS et ISOLEMENT
         pre.bullet.no-scroll
           code.language-css.
             mon-element span {
@@ -246,6 +246,62 @@ html
             }
 
             /* ça marchera si y'a des hooks proposés */
+
+      section(data-bespoke-hash='web-components-templates-1')
+        h2.bullet Templates
+        p.bullet  Server Side (marche à la perfection)
+        p.bullet  Client Side (Approches calamiteuses)
+
+      section(data-bespoke-hash='web-components-templates-2')
+        h2 Templates
+        p.bullet L'approche DOM
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;div id="getMyTemplate" style="display: none;"&gt;
+                &lt;!-- Début de la Template --&gt;
+                &lt;div&gt;
+                    &lt;h1&gt;Titre&lt;/h1&gt;
+
+                    &lt;img src="path/to/logo.png" /&gt;
+                &lt;/div&gt;
+                &lt;!-- Fin de la Template --&gt;
+            &lt;/div&gt;
+
+      section(data-bespoke-hash='web-components-templates-3')
+        h2 Templates
+        p.bullet L'approche Script Tag
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;script id="getMyTemplate" type="text/template"&gt;
+                &lt;div&gt;
+                    &lt;h1&gt;Titre&lt;/h1&gt;
+
+                    &lt;img src="path/to/logo.png" /&gt;
+                &lt;/div&gt;
+            &lt;/script&gt;
+
+      section(data-bespoke-hash='web-components-templates-4')
+        h2 Templates
+        p.bullet  La meilleure approche
+        h3.bullet Le Tag HTML5 &lt;template&gt;
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;template id="getMyTemplate"&gt;
+                &lt;div&gt;
+                    &lt;h1&gt;Titre&lt;/h1&gt;
+
+                    &lt;img src="path/to/logo.png" /&gt;
+                &lt;/div&gt;
+            &lt;/template&gt;
+
+      section(data-bespoke-hash='web-components-compatibilite')
+        h2 Compatibilité
+        p.bullet  Le site <a href="http://caniuse.com">http://caniuse.com</a>
+        pre.bullet.no-scroll
+          code.language-javascript.
+            if (!window.HTMLTemplateElement) {
+                // Templates supportés
+            }
 
       section(data-bespoke-hash='web-components-resume')
         h2 Web Components
@@ -255,7 +311,7 @@ html
           li Simplicité (Interaction avec les autres éléments)
           li Stabilité (Api protégé)
           li Réutilisabilité
-          li Encapsulation
+          li Encapsulation et Isolement
           li Composabilité
 
       section
