@@ -70,7 +70,7 @@ html
         p.bullet
           img(src="images/datepicker.png" alt="jQuery datepicker")
 
-      section(data-bespoke-hash='old-web-component')
+      section(data-bespoke-hash='old-web-components')
         h2.bullet Old School manière
         pre.bullet.no-scroll
           code.language-markup.
@@ -82,18 +82,19 @@ html
         pre.bullet.no-scroll
           code.language-javascript.
             $(function() {
-              $('input[data-widget="datepicker"]').datepicker();
+                $('input[data-widget="datepicker"]')
+                    .datepicker();
             });
 
-      section(data-bespoke-hash='old-web-component-issues')
+      section(data-bespoke-hash='old-web-components-issues')
         h2.bullet C'est Nickel ?
         pre.bullet.no-scroll
           code.language-javascript.
             // Modal au contenu interactive
             var datepickerHTML = [
                 '&lt;input type="text" data-widget="datepicker" ',
-                  'id="newDatepicker" /&gt;'
-              ].join('');
+                    'id="newDatepicker" /&gt;'
+            ].join('');
 
             $('div.modal .modal-body p').html(datepickerHTML);
         pre.bullet.no-scroll
@@ -101,7 +102,7 @@ html
             // encore une fois
             $('#newDatepicker').datepicker();
 
-      section(data-bespoke-hash='old-web-component-markup')
+      section(data-bespoke-hash='old-web-components-markup')
         h2.bullet C'est le seul problème ?
         pre.bullet.no-scroll.streched-code
           code.language-markup.
@@ -119,6 +120,137 @@ html
                 &lt;/table&gt;
             &lt;/div&gt;
 
+      section(data-bespoke-hash='new-web-components-hero')
+        h2.bullet Web Component Hero
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;link rel="import" href="mon-datepicker.html" /&gt;
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;mon-datepicker /&gt;
+        pre.bullet.no-scroll
+          code.language-javascript.
+            document.createElement('mon-datepicker');
+            div.innerHTML = '&lt;mon-datepicker /&gt;';
+            $('div.modal .modal-body p').html(
+                '&lt;mon-datepicker /&gt;'
+            );
+
+      section(data-bespoke-hash='web-components-technolgies')
+        h2.bullet Technologies Web Components
+        ul.bigger
+          li Custom Elements
+          li Shadow DOM
+          li Templates
+          li HTML Imports
+
+      section(data-bespoke-hash='web-components-dom-elements-1')
+        h2.bullet Custom Elements
+        p.bullet  comment les éléments DOM (Tags) sont instanciés
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;input type="text" /&gt;
+        pre.bullet.no-scroll
+          code.language-javascript.
+            var input = document.createElement('input');
+
+            div.innerHTML = '&lt;input type="text" /&gt;';
+
+      section(data-bespoke-hash='web-components-dom-elements-2')
+        h2.bullet DOM Elements
+        p.bullet  Exemple
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;input id="dateChoice" type="date" /&gt;
+        pre.bullet.no-scroll
+          code.language-javascript.
+            document.getElementByID('dateChoice')
+                .children.length  //...0
+
+      section(data-bespoke-hash='web-components-dom-elements-3')
+        h2 DOM Elements
+        p.bullet Exemple
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;select&gt;
+                &lt;option value="1"&gt;Option 1&lt;/option&gt;
+                &lt;option value="2"&gt;Option 2&lt;/option&gt;
+                &lt;option value="3"&gt;Option 3&lt;/option&gt;
+            &lt;/select&gt;
+
+      section(data-bespoke-hash='web-components-dom-elements-4')
+        h2 DOM Elements
+        p.bullet CSS par défaut
+        p.bullet pas besoin d'avoir un style pour le rendement
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;link rel="stylesheet" href="calendrier.css" /&gt;
+
+      section(data-bespoke-hash='web-components-dom-elements-5')
+        h2 DOM Elements
+        p.bullet Personaliser le CSS à travers les hooks
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;input type="text" placeholder="Votre Prénom" /&gt;
+        pre.bullet.no-scroll
+          code.language-css.
+            ::-webkit-input-placeholder {
+                color: green;   /* Chrome/Opera/Safari */
+            }
+            ::-moz-placeholder {
+                color: green;   /* Firefox 19+ */
+            }
+
+      section(data-bespoke-hash='web-components-custom-elements')
+        h2.bullet Custom Elements
+        p.bullet  Pour enregistrer un élément personnalisé
+        pre.bullet.no-scroll
+          code.language-javascript.
+            var monElem = document.register('mon-element');
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;mon-element /&gt;
+        pre.bullet.no-scroll
+          code.language-javascript.
+            document.createElement('mon-element');
+            div.innerHTML = '&lt;mon-element /&gt;';
+            new monElement();
+
+      section(data-bespoke-hash='web-components-shadow-dom-1')
+        h2.bullet Shadow DOM
+        p.bullet  Les Custom Elements ont ...
+        ul
+          li ... un accés caché à leur structure DOM interne
+          li ... un accés à leur élément fils (child)
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;mon-element&gt;
+                &lt;h1&gt;Mon premier élément personnalisé&lt;/h1&gt;
+
+                &lt;p&gt;  &lt;!-- Contenu interne --&gt; &lt;/p&gt;
+            &lt;/mon-element&gt;
+
+      section(data-bespoke-hash='web-components-shadow-dom-2')
+        h2 Shadow DOM
+        p.bullet leur point fort ...
+        h3.bullet ENCAPSULATION CSS
+        pre.bullet.no-scroll
+          code.language-css.
+            mon-element span {
+                color: green;   /* ça ne marchera pas */
+            }
+
+            /* ça marchera si y'a des hooks proposés */
+
+      section(data-bespoke-hash='web-components-resume')
+        h2.bullet Web Components
+        ul
+          li Simplicité (Interaction avec les autres éléments)
+          li Stabilité (Api protégé)
+          li Réutilisabilité
+          li Encapsulation
+          li Composabilité
+
       section
         h2 Touch Interaction
         h3 Powered by <a href="https://github.com/markdalgleish/bespoke-touch">bespoke-touch</a>
@@ -134,18 +266,6 @@ html
           li Bullet 1
           li Bullet 2
           li Bullet 3
-
-      section
-        h2 Syntax Highlighting
-        h3 Powered by <a href="http://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/LeaVerou/prism">Prism</a>
-        pre
-          code.language-javascript.
-            bespoke.from('article', [
-              classes(),
-              keys(),
-              touch(),
-              bullets('li, .bullet')
-            ]);
 
       section(data-bespoke-hash='named-route')
         h2 Named Route
