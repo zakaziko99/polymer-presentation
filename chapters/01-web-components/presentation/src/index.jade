@@ -22,7 +22,7 @@ html
             p Présenté par <strong>Zakaria Amarifi</strong>
             p 2016 &copy; <span>Development Media 73</span>
 
-      section(data-bespoke-hash='polymer-cest-quoi')
+      section.slide-custom-01(data-bespoke-hash='polymer-cest-quoi')
         h2.bullet C'est quoi Polymer ?
         p.bullet
           span Un ensemble de librairies utilisant les composants web ( Web Components )
@@ -30,7 +30,7 @@ html
           span C'est un nouveau concept
           span.ln-return ( ce n'est pas une framework )
         p.bullet
-          span C'est le futur du développement web
+          span Utilise les futur technologies du développement web
           span.ln-return et c'est en ...
         p.bullet
           span ... JavaScript
@@ -70,12 +70,13 @@ html
         p
           img(src="images/web-components.svg" width="360" alt="Web Components")
 
-      section(data-bespoke-hash='histoire')
-        h2.bullet  Un composant web aujourd'hui
+      section.slide-custom-05(data-bespoke-hash='histoire')
+        h2 Il était une fois ...
+        h3.bullet ... ce qu'on appelait un composant web
         p.bullet
           img(src="images/datepicker.png" alt="jQuery datepicker")
 
-      section(data-bespoke-hash='old-web-components')
+      section(data-bespoke-hash='old-wc')
         h2.bullet Old School manière
         pre.bullet.no-scroll
           code.language-markup.
@@ -91,7 +92,7 @@ html
                     .datepicker();
             });
 
-      section(data-bespoke-hash='old-web-components-issues')
+      section(data-bespoke-hash='old-wc-issues')
         h2.bullet C'est Nickel ?
         pre.bullet.no-scroll
           code.language-javascript.
@@ -107,7 +108,7 @@ html
             // encore une fois
             $('#newDatepicker').datepicker();
 
-      section(data-bespoke-hash='old-web-components-markup')
+      section(data-bespoke-hash='old-wc-markup')
         h2.bullet C'est le seul problème ?
         pre.bullet.no-scroll.streched-code
           code.language-markup.
@@ -125,7 +126,7 @@ html
                 &lt;/table&gt;
             &lt;/div&gt;
 
-      section(data-bespoke-hash='new-web-components-hero')
+      section(data-bespoke-hash='new-wc-hero')
         h2.bullet Web Component Hero
         pre.bullet.no-scroll
           code.language-markup.
@@ -141,7 +142,7 @@ html
                 '&lt;mon-datepicker /&gt;'
             );
 
-      section(data-bespoke-hash='web-components-technolgies')
+      section.slide-custom-10(data-bespoke-hash='technolgies')
         h2.bullet Technologies Web Components
         ul.bigger
           li Custom Elements
@@ -149,7 +150,7 @@ html
           li Templates
           li HTML Imports
 
-      section(data-bespoke-hash='web-components-dom-elements-1')
+      section(data-bespoke-hash='dom-elements-1')
         h2.bullet Custom Elements
         p.bullet  comment les éléments DOM (Tags) sont instanciés
         pre.bullet.no-scroll
@@ -161,21 +162,17 @@ html
 
             div.innerHTML = '&lt;input type="text" /&gt;';
 
-      section(data-bespoke-hash='web-components-dom-elements-2')
-        h2.bullet DOM Elements
-        p.bullet  Exemple
-        pre.bullet.no-scroll
-          code.language-markup.
-            &lt;input id="dateChoice" type="date" /&gt;
-        pre.bullet.no-scroll
-          code.language-javascript.
-            document.getElementByID('dateChoice')
-                .children.length  //...0
-
-      section(data-bespoke-hash='web-components-dom-elements-3')
+      section(data-bespoke-hash='dom-elements-2')
         h2 DOM Elements
         p.bullet Exemple
         pre.bullet.no-scroll
+          code.language-markup.
+            &lt;input id="dateChoice" type="date" /&gt;
+
+      section(data-bespoke-hash='dom-elements-3')
+        h2 DOM Elements
+        p  Exemple
+        pre.no-scroll
           code.language-markup.
             &lt;select&gt;
                 &lt;option value="1"&gt;Option 1&lt;/option&gt;
@@ -183,7 +180,7 @@ html
                 &lt;option value="3"&gt;Option 3&lt;/option&gt;
             &lt;/select&gt;
 
-      section(data-bespoke-hash='web-components-dom-elements-4')
+      section(data-bespoke-hash='dom-elements-4')
         h2 DOM Elements
         p.bullet CSS par défaut
         p.bullet pas besoin d'avoir un style pour le rendement
@@ -191,7 +188,7 @@ html
           code.language-markup.
             &lt;link rel="stylesheet" href="calendrier.css" /&gt;
 
-      section(data-bespoke-hash='web-components-dom-elements-5')
+      section(data-bespoke-hash='dom-elements-5')
         h2 DOM Elements
         p.bullet Personaliser le CSS à travers les hooks
         pre.bullet.no-scroll
@@ -206,12 +203,12 @@ html
                 color: green;   /* Firefox 19+ */
             }
 
-      section(data-bespoke-hash='web-components-custom-elements')
+      section(data-bespoke-hash='custom-elements')
         h2.bullet Custom Elements
         p.bullet  Pour enregistrer un élément personnalisé
         pre.bullet.no-scroll
           code.language-javascript.
-            var monElem = document.register('mon-element');
+            var monElement = document.registerElement('mon-element');
         pre.bullet.no-scroll
           code.language-markup.
             &lt;mon-element /&gt;
@@ -221,7 +218,7 @@ html
             div.innerHTML = '&lt;mon-element /&gt;';
             new monElement();
 
-      section(data-bespoke-hash='web-components-shadow-dom-1')
+      section(data-bespoke-hash='shadow-dom-1')
         h2.bullet Shadow DOM
         p.bullet  Les Custom Elements ont ...
         ul
@@ -235,7 +232,7 @@ html
                 &lt;p&gt;  &lt;!-- Contenu interne --&gt; &lt;/p&gt;
             &lt;/mon-element&gt;
 
-      section(data-bespoke-hash='web-components-shadow-dom-2')
+      section(data-bespoke-hash='shadow-dom-2')
         h2 Shadow DOM
         p.bullet leur point fort ...
         h3.bullet ENCAPSULATION CSS et ISOLEMENT
@@ -247,12 +244,12 @@ html
 
             /* ça marchera si y'a des hooks proposés */
 
-      section(data-bespoke-hash='web-components-templates-1')
+      section(data-bespoke-hash='templates-1')
         h2.bullet Templates
         p.bullet  Server Side (marche à la perfection)
         p.bullet  Client Side (Approches calamiteuses)
 
-      section(data-bespoke-hash='web-components-templates-2')
+      section(data-bespoke-hash='templates-2')
         h2 Templates
         p.bullet L'approche DOM
         pre.bullet.no-scroll
@@ -267,7 +264,7 @@ html
                 &lt;!-- Fin de la Template --&gt;
             &lt;/div&gt;
 
-      section(data-bespoke-hash='web-components-templates-3')
+      section(data-bespoke-hash='templates-3')
         h2 Templates
         p.bullet L'approche Script Tag
         pre.bullet.no-scroll
@@ -280,7 +277,7 @@ html
                 &lt;/div&gt;
             &lt;/script&gt;
 
-      section(data-bespoke-hash='web-components-templates-4')
+      section(data-bespoke-hash='templates-4')
         h2 Templates
         p.bullet  La meilleure approche
         h3.bullet Le Tag HTML5 &lt;template&gt;
@@ -294,16 +291,50 @@ html
                 &lt;/div&gt;
             &lt;/template&gt;
 
-      section(data-bespoke-hash='web-components-compatibilite')
+      section(data-bespoke-hash='html-imports-1')
+        h2 HTML Imports
+        p.bullet  Pr^et à porter
+        div.bullet
+          pre.no-scroll
+            code.language-markup.
+              &lt;style&gt;
+                  /* CSS de mon élément */
+              &lt;/style&gt;
+              ...
+              &lt;template&gt;
+                  &lt;!-- HTML de mon élément --&gt;
+              &lt;/template&gt;
+              ...
+              &lt;script&gt;
+                  // API de mon élément
+              &lt;/script&gt;
+
+      section(data-bespoke-hash='html-imports-2')
+        h2 HTML Imports
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;link rel="import" href="mon-element.html" /&gt;
+        br
+        br
+        br
+        h3.bullet ... et VOILÀ !
+
+      section(data-bespoke-hash='compatibilite')
         h2 Compatibilité
         p.bullet  Le site <a href="http://caniuse.com">http://caniuse.com</a>
         pre.bullet.no-scroll
           code.language-javascript.
-            if (!window.HTMLTemplateElement) {
-                // Templates supportés
+            if (document.registerElement) {       // Custom Elements supportés
+            }
+            if (document.body.createShadowRoot) { // Shadow DOM supporté
+            }
+            if (window.HTMLTemplateElement) {     // Templates supportés
+            }
+            if ('import' in document.createElement('link')) {
+                // HTML Imports supportés
             }
 
-      section(data-bespoke-hash='web-components-resume')
+      section(data-bespoke-hash='resume')
         h2 Web Components
         p.bullet
           img(src="images/web-components.svg" width="120" alt="Web Components")
@@ -314,42 +345,9 @@ html
           li Encapsulation et Isolement
           li Composabilité
 
-      section
-        h2 Touch Interaction
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-touch">bespoke-touch</a>
-
-      section
-        h2 Responsive Slides
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-scale">bespoke-scale</a>
-
-      section
-        h2 Bullet List
-        h3.bullet Powered by <a href="https://github.com/markdalgleish/bespoke-bullets">bespoke-bullets</a>
-        ul
-          li Bullet 1
-          li Bullet 2
-          li Bullet 3
-
-      section(data-bespoke-hash='named-route')
-        h2 Named Route
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-hash">bespoke-hash</a>
-        p Look up! This route has been named with a <em>'data-bespoke-hash'</em> attribute.
-
-      section.emphatic-text(data-bespoke-backdrop='emphatic')
-        h2 Emphatic Slide!
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-backdrop">bespoke-backdrop</a>
-
-      section
-        h2.bullet Just the beginning...
-        br
-        ul
-          li Edit <a href="http://jade-lang.com/">Jade</a> markup in <em>'src/index.jade'</em>
-          li Edit <a href="http://learnboost.github.io/stylus/">Stylus</a> styles in <em>'src/styles/main.styl'</em>
-          li Edit JavaScript in <em>'src/scripts/main.js'</em>
-        br
-        ul
-          li
-            strong Enjoy! :)
-            a(href='http://twitter.com/markdalgleish')  -@markdalgleish
+      section(data-bespoke-hash='final')
+        h2 &lt;thats-all-folks /&gt;
+        p.bullet
+          img(src="images/web-components.svg" width="120" alt="Web Components")
 
     script(src='build/build.js')
