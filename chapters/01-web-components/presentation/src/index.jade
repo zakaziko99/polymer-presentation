@@ -17,12 +17,12 @@ html
           div.logo
             img(src="images/polymer.svg" width="300" alt="Polymer Logo")
           h1.much-bigger Formation Polymer
-            small (v 1.x.x)
+            small (version &gt;= 1.x)
           div.bottom-main
             p Présenté par <strong>Zakaria Amarifi</strong>
             p 2016 &copy; <span>Development Media 73</span>
 
-      section(data-bespoke-hash='polymer-cest-quoi')
+      section.slide-custom-01(data-bespoke-hash='polymer-cest-quoi')
         h2.bullet C'est quoi Polymer ?
         p.bullet
           span Un ensemble de librairies utilisant les composants web ( Web Components )
@@ -30,7 +30,7 @@ html
           span C'est un nouveau concept
           span.ln-return ( ce n'est pas une framework )
         p.bullet
-          span C'est le futur du développement web
+          span Utilise les futur technologies du développement web
           span.ln-return et c'est en ...
         p.bullet
           span ... JavaScript
@@ -54,7 +54,7 @@ html
           li Les animations et transitions
           li Performance et optimisation
 
-      section.slide-home(data-bespoke-backdrop='slide-home-container', data-bespoke-hash='accueil')
+      section.slide-home(data-bespoke-backdrop='slide-home-container', data-bespoke-hash='chapitre')
         div.container-home
           h3.top-main Formation Polymer 2016
           div.logo
@@ -65,58 +65,289 @@ html
             p Présenté par <strong>Zakaria Amarifi</strong>
             p 2016 &copy; <span>Development Media 73</span>
 
-      section
-        h2 Keyboard Interaction
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-keys">bespoke-keys</a>
+      section(data-bespoke-hash='accueil')
+        h2 Web Components
+        p
+          img(src="images/web-components.svg" width="360" alt="Web Components")
 
-      section
-        h2 Touch Interaction
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-touch">bespoke-touch</a>
+      section.slide-custom-05(data-bespoke-hash='histoire')
+        h2 Il était une fois ...
+        h3.bullet ... ce qu'on appelait un composant web
+        p.bullet
+          img(src="images/datepicker.png" alt="jQuery datepicker")
 
-      section
-        h2 Responsive Slides
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-scale">bespoke-scale</a>
-
-      section
-        h2 Bullet List
-        h3.bullet Powered by <a href="https://github.com/markdalgleish/bespoke-bullets">bespoke-bullets</a>
-        ul
-          li Bullet 1
-          li Bullet 2
-          li Bullet 3
-
-      section
-        h2 Syntax Highlighting
-        h3 Powered by <a href="http://twitter.com/LeaVerou">Lea Verou</a>'s <a href="https://github.com/LeaVerou/prism">Prism</a>
-        pre
+      section(data-bespoke-hash='old-wc')
+        h2.bullet Old School manière
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;link rel="stylesheet" href="datepicker.css" /&gt;
+            &lt;script src="datepicker.js" /&gt;&lt;/script&gt;
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;input type="text" data-widget="datepicker" /&gt;
+        pre.bullet.no-scroll
           code.language-javascript.
-            bespoke.from('article', [
-              classes(),
-              keys(),
-              touch(),
-              bullets('li, .bullet')
-            ]);
+            $(function() {
+                $('input[data-widget="datepicker"]')
+                    .datepicker();
+            });
 
-      section(data-bespoke-hash='named-route')
-        h2 Named Route
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-hash">bespoke-hash</a>
-        p Look up! This route has been named with a <em>'data-bespoke-hash'</em> attribute.
+      section(data-bespoke-hash='old-wc-issues')
+        h2.bullet C'est Nickel ?
+        pre.bullet.no-scroll
+          code.language-javascript.
+            // Modal au contenu interactive
+            var datepickerHTML = [
+                '&lt;input type="text" data-widget="datepicker" ',
+                    'id="newDatepicker" /&gt;'
+            ].join('');
 
-      section.emphatic-text(data-bespoke-backdrop='emphatic')
-        h2 Emphatic Slide!
-        h3 Powered by <a href="https://github.com/markdalgleish/bespoke-backdrop">bespoke-backdrop</a>
+            $('div.modal .modal-body p').html(datepickerHTML);
+        pre.bullet.no-scroll
+          code.language-javascript.
+            // encore une fois
+            $('#newDatepicker').datepicker();
 
-      section
-        h2.bullet Just the beginning...
-        br
+      section(data-bespoke-hash='old-wc-markup')
+        h2.bullet C'est le seul problème ?
+        pre.bullet.no-scroll.streched-code
+          code.language-markup.
+            &lt;div id="ui-datepicker-div" class="ui-datepicker ui-widget
+                ui-widget-content ui-helper-clearfix ui-corner-all"&gt;
+                &lt;div class="ui-datepicker-header
+                    ui-widget-header ui-helper-clearfix ui-corner-all"&gt;
+                    &lt;div class="ui-datepicker-title"&gt;
+                        &lt;span class="ui-datepicker-month"&gt;Mars&lt;/span&gt;
+                        &lt;span class="ui-datepicker-year"&gt;2016&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;table class="ui-datepicker-calendar"&gt;
+                    ...
+                &lt;/table&gt;
+            &lt;/div&gt;
+
+      section(data-bespoke-hash='new-wc-hero')
+        h2.bullet Web Component Hero
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;link rel="import" href="mon-datepicker.html" /&gt;
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;mon-datepicker /&gt;
+        pre.bullet.no-scroll
+          code.language-javascript.
+            document.createElement('mon-datepicker');
+            div.innerHTML = '&lt;mon-datepicker /&gt;';
+            $('div.modal .modal-body p').html(
+                '&lt;mon-datepicker /&gt;'
+            );
+
+      section.slide-custom-10(data-bespoke-hash='technolgies')
+        h2.bullet Technologies Web Components
+        ul.bigger
+          li Custom Elements
+          li Shadow DOM
+          li Templates
+          li HTML Imports
+
+      section(data-bespoke-hash='dom-elements-1')
+        h2.bullet Custom Elements
+        p.bullet  comment les éléments DOM (Tags) sont instanciés
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;input type="text" /&gt;
+        pre.bullet.no-scroll
+          code.language-javascript.
+            var input = document.createElement('input');
+
+            div.innerHTML = '&lt;input type="text" /&gt;';
+
+      section(data-bespoke-hash='dom-elements-2')
+        h2 DOM Elements
+        p.bullet Exemple
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;input id="dateChoice" type="date" /&gt;
+
+      section(data-bespoke-hash='dom-elements-3')
+        h2 DOM Elements
+        p  Exemple
+        pre.no-scroll
+          code.language-markup.
+            &lt;select&gt;
+                &lt;option value="1"&gt;Option 1&lt;/option&gt;
+                &lt;option value="2"&gt;Option 2&lt;/option&gt;
+                &lt;option value="3"&gt;Option 3&lt;/option&gt;
+            &lt;/select&gt;
+
+      section(data-bespoke-hash='dom-elements-4')
+        h2 DOM Elements
+        p.bullet CSS par défaut
+        p.bullet pas besoin d'avoir un style pour le rendement
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;link rel="stylesheet" href="calendrier.css" /&gt;
+
+      section(data-bespoke-hash='dom-elements-5')
+        h2 DOM Elements
+        p.bullet Personaliser le CSS à travers les hooks
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;input type="text" placeholder="Votre Prénom" /&gt;
+        pre.bullet.no-scroll
+          code.language-css.
+            ::-webkit-input-placeholder {
+                color: green;   /* Chrome/Opera/Safari */
+            }
+            ::-moz-placeholder {
+                color: green;   /* Firefox 19+ */
+            }
+
+      section(data-bespoke-hash='custom-elements')
+        h2.bullet Custom Elements
+        p.bullet  Pour enregistrer un élément personnalisé
+        pre.bullet.no-scroll
+          code.language-javascript.
+            var monElement = document.registerElement('mon-element');
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;mon-element /&gt;
+        pre.bullet.no-scroll
+          code.language-javascript.
+            document.createElement('mon-element');
+            div.innerHTML = '&lt;mon-element /&gt;';
+            new monElement();
+
+      section(data-bespoke-hash='shadow-dom-1')
+        h2.bullet Shadow DOM
+        p.bullet  Les Custom Elements ont ...
         ul
-          li Edit <a href="http://jade-lang.com/">Jade</a> markup in <em>'src/index.jade'</em>
-          li Edit <a href="http://learnboost.github.io/stylus/">Stylus</a> styles in <em>'src/styles/main.styl'</em>
-          li Edit JavaScript in <em>'src/scripts/main.js'</em>
+          li ... un accés caché à leur structure DOM interne
+          li ... un accés à leur élément fils (child)
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;mon-element&gt;
+                &lt;h1&gt;Mon premier élément personnalisé&lt;/h1&gt;
+
+                &lt;p&gt;  &lt;!-- Contenu interne --&gt; &lt;/p&gt;
+            &lt;/mon-element&gt;
+
+      section(data-bespoke-hash='shadow-dom-2')
+        h2 Shadow DOM
+        p.bullet leur point fort ...
+        h3.bullet ENCAPSULATION CSS et ISOLEMENT
+        pre.bullet.no-scroll
+          code.language-css.
+            mon-element span {
+                color: green;   /* ça ne marchera pas */
+            }
+
+            /* ça marchera si y'a des hooks proposés */
+
+      section(data-bespoke-hash='templates-1')
+        h2.bullet Templates
+        p.bullet  Server Side (marche à la perfection)
+        p.bullet  Client Side (Approches calamiteuses)
+
+      section(data-bespoke-hash='templates-2')
+        h2 Templates
+        p.bullet L'approche DOM
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;div id="getMyTemplate" style="display: none;"&gt;
+                &lt;!-- Début de la Template --&gt;
+                &lt;div&gt;
+                    &lt;h1&gt;Titre&lt;/h1&gt;
+
+                    &lt;img src="path/to/logo.png" /&gt;
+                &lt;/div&gt;
+                &lt;!-- Fin de la Template --&gt;
+            &lt;/div&gt;
+
+      section(data-bespoke-hash='templates-3')
+        h2 Templates
+        p.bullet L'approche Script Tag
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;script id="getMyTemplate" type="text/x-handlebars-template"&gt;
+                &lt;div&gt;
+                    &lt;h1&gt;Titre&lt;/h1&gt;
+
+                    &lt;img src="path/to/logo.png" /&gt;
+                &lt;/div&gt;
+            &lt;/script&gt;
+
+      section(data-bespoke-hash='templates-4')
+        h2 Templates
+        p.bullet  La meilleure approche
+        h3.bullet Le Tag HTML5 &lt;template&gt;
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;template id="getMyTemplate"&gt;
+                &lt;div&gt;
+                    &lt;h1&gt;Titre&lt;/h1&gt;
+
+                    &lt;img src="path/to/logo.png" /&gt;
+                &lt;/div&gt;
+            &lt;/template&gt;
+
+      section(data-bespoke-hash='html-imports-1')
+        h2 HTML Imports
+        p.bullet  Pr^et à porter
+        div.bullet
+          pre.no-scroll
+            code.language-markup.
+              &lt;style&gt;
+                  /* CSS de mon élément */
+              &lt;/style&gt;
+              ...
+              &lt;template&gt;
+                  &lt;!-- HTML de mon élément --&gt;
+              &lt;/template&gt;
+              ...
+              &lt;script&gt;
+                  // API de mon élément
+              &lt;/script&gt;
+
+      section(data-bespoke-hash='html-imports-2')
+        h2 HTML Imports
+        pre.bullet.no-scroll
+          code.language-markup.
+            &lt;link rel="import" href="mon-element.html" /&gt;
         br
+        br
+        br
+        h3.bullet ... et VOILÀ !
+
+      section(data-bespoke-hash='compatibilite')
+        h2 Compatibilité
+        p.bullet  Le site <a href="http://caniuse.com">http://caniuse.com</a>
+        pre.bullet.no-scroll
+          code.language-javascript.
+            if (document.registerElement) {       // Custom Elements supportés
+            }
+            if (document.body.createShadowRoot) { // Shadow DOM supporté
+            }
+            if (window.HTMLTemplateElement) {     // Templates supportés
+            }
+            if ('import' in document.createElement('link')) {
+                // HTML Imports supportés
+            }
+
+      section(data-bespoke-hash='resume')
+        h2 Web Components
+        p.bullet
+          img(src="images/web-components.svg" width="120" alt="Web Components")
         ul
-          li
-            strong Enjoy! :)
-            a(href='http://twitter.com/markdalgleish')  -@markdalgleish
+          li Simplicité (Interaction avec les autres éléments)
+          li Stabilité (Api protégé)
+          li Réutilisabilité
+          li Encapsulation et Isolement
+          li Composabilité
+
+      section(data-bespoke-hash='final')
+        h2 &lt;thats-all-folks /&gt;
+        p.bullet
+          img(src="images/web-components.svg" width="120" alt="Web Components")
 
     script(src='build/build.js')

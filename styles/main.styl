@@ -1,0 +1,130 @@
+body
+    background #002B36
+    font-family 'Roboto',helvetica,arial,sans-serif
+    font-weight 500
+    section
+        &.bespoke-slide
+            background transparent
+            color rgba(#FFF, 0.9)
+            a
+                color #00EFF3
+            h1, h2, h3
+                color #FFF
+                font-weight 700
+            h2
+                color #FFFC3C !important
+                margin-bottom 35px
+            :not(pre) > code[class*="language-"], pre[class*="language-"]
+                background #010A0C
+            .ln-return
+                display block
+            ul
+                li
+                    position relative
+                    text-align left
+                    &:before
+                        content ''
+                        position absolute
+                        display inline-block
+                        top 6px
+                        left -35px
+                        width 10px
+                        height 10px
+                        background #FFFC3C
+                &.bigger
+                    font-size 1.5em
+            &.slide-home
+                color rgba(#000, 0.8)
+                h1, h2, h3
+                    color #000
+                .container-home
+                    position relative
+                    border-radius 10px
+                    width 100%
+                    height 100%
+                    background rgba(#FFF, 0.8)
+                    padding 40px
+                h3.top-main
+                    position absolute
+                    top 2px
+                    left 10px
+                    margin 0
+                    font-size 10px
+                    font-weight 700
+                    text-transform uppercase
+                .logo
+                    position relative
+                    width 100%
+                    height 60%
+                    img
+                        position absolute
+                        top 50%
+                        left 50%
+                        transform translate(-50%, -50%)
+                h1
+                    margin 0
+                    font-size 30px
+                    line-height 1
+                    text-transform uppercase
+                    letter-spacing 2px
+                    &.much-bigger
+                        margin-top 40px
+                        font-size 40px
+                        font-weight 500
+                        letter-spacing 3px
+                        white-space nowrap
+                        small
+                            display block
+                            color rgba(#000, 0.6)
+                            font-size 20px
+                            text-transform none
+                    .chapter
+                        display inline-block
+                        padding-bottom 10px
+                        color #9A274E
+                        font-size 20px
+                        text-decoration underline
+                        letter-spacing 4px
+                    .highlight
+                        display block
+                        color #273380
+                        font-size 40px
+                .bottom-main
+                    position absolute
+                    bottom 2px
+                    right 10px
+                    font-size 10px
+                    text-align right
+                    p
+                        margin 0 0 4px 0
+                        font-size 1.5em
+                        line-height 1
+                        strong
+                            font-weight 500
+                            color #273380
+                        span
+                            font-weight 500
+                            color #9A274E
+        pre
+            &.no-scroll
+                overflow visible
+                padding 15px !important
+                box-sizing: content-box
+            &.streched-code
+                font-size 0.778em
+    .slide-home-container
+        background-image url("/images/coding-bg.jpg")
+        background-size cover
+        &:after
+            content ''
+            display inline-block
+            position absolute
+            top 0
+            left 0
+            right 0
+            bottom 0
+            // background rgba(#FFF, 0.85)
+    .bespoke-progress-parent
+        height 3px
+        .bespoke-progress-bar
+            background #FFDF29
