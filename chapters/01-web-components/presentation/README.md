@@ -1,10 +1,15 @@
-# Chapitre 01:\s\s Les composants web (Web Components)
+![](src/images/web-components.png)
+# Chapitre 01: Les composants web (Web Components)
 > Une présentation sur l'histoire des composants web, créée à l'aide de l'outil [Bespoke.js](http://markdalgleish.com/projects/bespoke.js)
 
 ## Sommaire
-* Elément 1
-* Elément 2
-* Elément 3
+* Il était une fois ... ce qu'on appelait un composant web
+* Le nouveau Composant Web
+* Custom Elements
+* Shadow DOM
+* Templates
+* HTML Imports
+* Compatibilité
 
 ## Voir la présentation en local
 
