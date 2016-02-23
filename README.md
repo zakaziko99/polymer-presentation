@@ -4,7 +4,7 @@
 basé sur Polymer et Material Design
 
 ### Présentation
-  - [Zakaria Amarifi] [@zakaria] : Développeur en JavaScript
+  - [Zakaria Amarifi] [@zakaria] : Développeur Frontend UI/UX Sénior
 
 
 ## Chapitres
