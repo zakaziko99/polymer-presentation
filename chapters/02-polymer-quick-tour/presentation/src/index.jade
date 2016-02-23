@@ -1,0 +1,89 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Formation Polymer: Chapitre 2 - Quelques notions Polymer
+
+    link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900')
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+
+    article
+
+      section.slide-home(data-bespoke-backdrop='slide-home-container', data-bespoke-hash='chapitre')
+        div.container-home
+          h3.top-main Formation Polymer 2016
+          div.logo
+            img(src="images/polymer.svg" width="200" alt="Polymer Logo")
+          h1 <span class="chapter">Chapitre 2</span> <br>Quelques notions Polymer
+          div.bottom-main
+            p Présenté par <strong>Zakaria Amarifi</strong>
+            p 2016 &copy; <span>Development Media 73</span>
+
+      section(data-bespoke-hash='accueil')
+        h2.bullet Pourquoi Polymer
+        ul
+          li Librairie pour créer nos propres éléments
+          li Polyfills pour les technologies Web Components
+          li Son approche et son catalogue d'éléments est de loin
+            br
+            span LA MEILLEURE
+
+      section.slide-custom-05(data-bespoke-hash='install')
+        h2.bullet Premier pas
+        p.bullet  Pré-requis
+          br
+          span Node.js
+          br
+          span Bower
+        pre.bullet.language-bash.no-scroll
+          code.language-bash.
+            $ npm install -g bower
+        pre.bullet.language-bash.no-scroll
+          code.language-bash.
+            $ bower init
+        pre.bullet.language-bash.no-scroll
+          code.language-bash.
+            $ bower install --save Polymer/polymer#^1.2.0
+
+      section(data-bespoke-hash='resume')
+        h2 Web Components
+        p.bullet
+          img(src="images/web-components.svg" width="120" alt="Web Components")
+        ul
+          li Simplicité (Interaction avec les autres éléments)
+          li Stabilité (Api protégé)
+          li Réutilisabilité
+          li Encapsulation et Isolement
+          li Composabilité
+
+      section.slide-custom-27(data-bespoke-hash='links')
+        h2 Liens utiles
+        ul
+          li
+            a(src="http://webcomponents.org/")
+              span  Web Components Community
+              small http://webcomponents.org
+          li
+            a(src="https://www.youtube.com/watch?v=T5y_lmLngAk&list=PLOU2XLYxmsIJkA_W95NDrjdkk3dR6Jq4w")
+              span Web Components by <strong>Eiji Kitamura</strong> (Google)
+              small https://www.youtube.com/watch?v=T5y_lmLngAk&list=PLOU2XLYxmsIJkA_W95NDrjdkk3dR6Jq4w
+          li
+            a(src="https://www.youtube.com/watch?v=s1PTPZwzQA4")
+              span Web Components by <strong>Mark Dalgleich</strong>
+              small https://www.youtube.com/watch?v=s1PTPZwzQA4
+          li
+            a(src="https://www.youtube.com/watch?v=XYlgxre_AF4")
+              span A future called Web Components by <strong>Zen Rocha</strong>
+              small https://www.youtube.com/watch?v=XYlgxre_AF4
+          li
+            a(src="https://www.youtube.com/watch?v=ZcZWtP1-9HQ")
+              span Les Web Components, pourquoi, comment, pour qui ? avec <strong>Raphaël Rougeron</strong>
+              small https://www.youtube.com/watch?v=ZcZWtP1-9HQ
+
+      section(data-bespoke-hash='final')
+        h2 &lt;thats-all-folks /&gt;
+
+    script(src='build/build.js')
