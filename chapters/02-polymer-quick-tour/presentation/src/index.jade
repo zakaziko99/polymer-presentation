@@ -23,29 +23,30 @@ html
             p 2016 &copy; <span>Development Media 73</span>
 
       section(data-bespoke-hash='accueil')
-        h2 Polymer
+        h2.bullet Pourquoi Polymer
+        ul
+          li Librairie pour créer nos propres éléments
+          li Polyfills pour les technologies Web Components
+          li Son approche et son catalogue d'éléments est de loin
+            br
+            span LA MEILLEURE
 
-      section.slide-custom-05(data-bespoke-hash='histoire')
-        h2 Il était une fois ...
-        h3.bullet ... ce qu'on appelait un composant web
-        p.bullet
-          img(src="images/datepicker.png" alt="jQuery datepicker")
-
-      section(data-bespoke-hash='old-wc')
-        h2.bullet Old School manière
-        pre.bullet.no-scroll
-          code.language-markup.
-            &lt;link rel="stylesheet" href="datepicker.css" /&gt;
-            &lt;script src="datepicker.js" /&gt;&lt;/script&gt;
-        pre.bullet.no-scroll
-          code.language-markup.
-            &lt;input type="text" data-widget="datepicker" /&gt;
-        pre.bullet.no-scroll
-          code.language-javascript.
-            $(function() {
-                $('input[data-widget="datepicker"]')
-                    .datepicker();
-            });
+      section.slide-custom-05(data-bespoke-hash='install')
+        h2.bullet Premier pas
+        p.bullet  Pré-requis
+          br
+          span Node.js
+          br
+          span Bower
+        pre.bullet.language-bash.no-scroll
+          code.language-bash.
+            $ npm install -g bower
+        pre.bullet.language-bash.no-scroll
+          code.language-bash.
+            $ bower init
+        pre.bullet.language-bash.no-scroll
+          code.language-bash.
+            $ bower install --save Polymer/polymer#^1.2.0
 
       section(data-bespoke-hash='resume')
         h2 Web Components
