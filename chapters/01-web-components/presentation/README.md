@@ -16,8 +16,8 @@
 Premièrement, assurez-vous d'avoir les modules suivants installés:
 
 1. [Node.js](http://nodejs.org)
-2. [Bower](http://bower.io): `npm install -g bower` use with `sudo` for Linux users
-3. [Gulp](http://gulpjs.com): `npm install -g gulp` use with `sudo` for Linux users
+2. [Bower](http://bower.io): `npm install -g bower` avec `sudo` pour les utilisateurs Linux
+3. [Gulp](http://gulpjs.com): `npm install -g gulp` avec `sudo` pour les utilisateurs Linux
 
 Ensuite, installez les dépendances en exécutant la commande suivante
 
