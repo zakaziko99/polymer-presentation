@@ -22,6 +22,7 @@ Premièrement, assurez-vous d'avoir les modules suivants installés:
 Ensuite, installez les dépendances en exécutant la commande suivante
 
 ```sh
+cd chapters/01-web-components/presentation
 npm install && bower install
 ```
 
