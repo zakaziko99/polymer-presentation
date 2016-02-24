@@ -31,7 +31,7 @@ html
             br
             span LA MEILLEURE
 
-      section.slide-custom-05(data-bespoke-hash='install')
+      section(data-bespoke-hash='install')
         h2.bullet Premier pas
         p.bullet  Pré-requis
           br
@@ -48,10 +48,90 @@ html
           code.language-bash.
             $ bower install --save Polymer/polymer#^1.2.0
 
+      section(data-bespoke-hash='code-main-page')
+        h2 Page principale
+        h3.bullet index.html
+        pre.bullet.no-scroll.streched-code
+          code.language-markup.
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+                &lt;head&gt;
+                    &lt;script src="bower_components/webcomponentsjs/webcomponents.min.js"&gt;&lt;/script&gt;
+                    &lt;link rel="import" href="mon-element.html"&gt;
+                &lt;/head&gt;
+
+                &lt;body&gt;
+                    &lt;mon-element&gt;&lt;/mon-element&gt;
+                &lt;/body&gt;
+            &lt;/html&gt;
+
+      section.slide-custom-01(data-bespoke-hash='code-element')
+        h2 Page élément
+        h3.bullet mon-element.html
+        pre.bullet.no-scroll.streched-code
+          code.language-markup.
+            &lt;link rel="import" href="bower_components/polymer/polymer.html"&gt;
+
+            &lt;dom-module id="mon-element"&gt;
+                &lt;style&gt; /* Style isolé pour l'élément */
+                    h1 { color: red }
+                &lt;/style&gt;
+
+                &lt;template&gt; &lt;!-- Markup de l'élément --&gt;
+                    &lt;h1&gt;Mon H1 personalisé&lt;/h1&gt;
+                &lt;/template&gt;
+
+                &lt;script&gt; // Api de l'élément
+                    Polymer({
+                        is: 'mon-element'
+                    });
+                &lt;/script&gt;
+            &lt;/dom-module&gt;
+
+      section.slide-custom-01(data-bespoke-hash='properties-1')
+        h2 Propriétés
+        h3.bullet mon-element.html
+        pre.bullet.no-scroll.streched-code
+          code.language-markup.
+            &lt;dom-module id="mon-element"&gt;
+                &lt;template&gt; &lt;!-- Markup de l'élément --&gt;
+                    &lt;p&gt;C'est {{author}} qui l'a fait !!!&lt;/p&gt;
+                &lt;/template&gt;
+
+                &lt;script&gt; // Api de l'élément
+                    Polymer({
+                        is: 'mon-element',
+                        properties: {   // Déclarer une propriété
+                            author: {
+                                type: String,
+                                value: "Zakaria"
+                            }
+                        }
+                    });
+                &lt;/script&gt;
+            &lt;/dom-module&gt;
+
+      section.slide-custom-01(data-bespoke-hash='properties-1')
+        h2 Propriétés
+        h3 mon-element.html
+        pre.bullet.no-scroll.streched-code
+          code.language-markup.
+            &lt;dom-module id="mon-element"&gt;
+                &lt;template&gt; &lt;!-- Markup de l'élément --&gt;
+                    &lt;p&gt;C'est {{author}} qui l'a fait !!!&lt;/p&gt;
+                &lt;/template&gt;
+                ...
+            &lt;/dom-module&gt;
+        h3.bullet index.html
+        pre.bullet.no-scroll.streched-code
+          code.language-markup.
+            &lt;body&gt;
+                &lt;mon-element author="Badr"&gt;&lt;/mon-element&gt;
+            &lt;/body&gt;
+
       section(data-bespoke-hash='resume')
         h2 Web Components
         p.bullet
-          img(src="images/web-components.svg" width="120" alt="Web Components")
         ul
           li Simplicité (Interaction avec les autres éléments)
           li Stabilité (Api protégé)
