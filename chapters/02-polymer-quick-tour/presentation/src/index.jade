@@ -95,7 +95,7 @@ html
           code.language-markup.
             &lt;dom-module id="mon-element"&gt;
                 &lt;template&gt; &lt;!-- Markup de l'élément --&gt;
-                    &lt;p&gt;C'est {{author}} qui l'a fait !!!&lt;/p&gt;
+                    &lt;p&gt;C'est &lt;span&gt;{{author}}&lt;/span&gt; qui l'a fait !!!&lt;/p&gt;
                 &lt;/template&gt;
 
                 &lt;script&gt; // Api de l'élément
@@ -111,14 +111,14 @@ html
                 &lt;/script&gt;
             &lt;/dom-module&gt;
 
-      section.slide-custom-01(data-bespoke-hash='properties-1')
+      section.slide-custom-02(data-bespoke-hash='properties-1')
         h2 Propriétés
         h3 mon-element.html
         pre.bullet.no-scroll.streched-code
           code.language-markup.
             &lt;dom-module id="mon-element"&gt;
                 &lt;template&gt; &lt;!-- Markup de l'élément --&gt;
-                    &lt;p&gt;C'est {{author}} qui l'a fait !!!&lt;/p&gt;
+                    &lt;p&gt;C'est &lt;span&gt;{{author}}&lt;/span&gt; qui l'a fait !!!&lt;/p&gt;
                 &lt;/template&gt;
                 ...
             &lt;/dom-module&gt;
@@ -128,6 +128,95 @@ html
             &lt;body&gt;
                 &lt;mon-element author="Badr"&gt;&lt;/mon-element&gt;
             &lt;/body&gt;
+
+      section.slide-custom-03(data-bespoke-hash='content-tag')
+        h2 Récupérer le contenu
+        div.bullet
+          h3 index.html
+          pre.no-scroll.streched-code
+            code.language-markup.
+              &lt;mon-element&gt;
+                  &lt;h1&gt; Titre de mon élément &lt;/h1&gt;
+                  &lt;p&gt; Description de mon élément &lt;/p&gt;
+              &lt;/mon-element&gt;
+        div.bullet
+          h3 mon-element.html
+          pre.no-scroll.streched-code
+            code.language-markup.
+              &lt;dom-module id="mon-element"&gt;
+                  &lt;template&gt; &lt;!-- Markup de l'élément --&gt;
+                      &lt;content&gt;
+                          &lt;!-- Ici on récupère les éléments introduits ---&gt;
+                      &lt;/content&gt;
+                  &lt;/template&gt;
+                  ...
+              &lt;/dom-module&gt;
+
+      section.slide-custom-04(data-bespoke-hash='styles')
+        h2 Style et CSS
+        div.bullet
+          h3 mon-element.html
+          pre.no-scroll.streched-code
+            code.language-markup.
+              &lt;dom-module id="mon-element"&gt;
+                  &lt;style&gt; /* CSS de l'élément */
+                      :host {
+                          background: yellow;
+                      }
+                      h1 {
+                          color: red; /* marche pas */
+                      }
+                      :content h1 {
+                          color: green; /* si ça va marcher */
+                      }
+                  &lt;/style&gt;
+
+                  &lt;template&gt;
+                      &lt;content&gt; &lt;/content&gt;
+                  &lt;/template&gt;
+              &lt;/dom-module&gt;
+
+      section.slide-custom-04(data-bespoke-hash='data-binding')
+        h2 Data Binding
+        div.bullet
+          h3 mon-element.html
+          pre.no-scroll.streched-code
+            code.language-markup.
+              &lt;dom-module id="mon-element"&gt;
+                  &lt;script&gt; // Api de l'élément
+                      Polymer({
+                          is: 'mon-element',
+                          properties: {
+                              hidden: {
+                                  type:   Boolean,
+                                  value:  false,
+                                  notify: true
+                              }
+                          }
+                      });
+                  &lt;/script&gt;
+              &lt;/dom-module&gt;
+
+      section.slide-custom-04(data-bespoke-hash='events')
+        h2 Évènements
+        div.bullet
+          h3 mon-element.html
+          pre.no-scroll.streched-code
+            code.language-markup.
+              &lt;dom-module id="mon-element"&gt;
+                  &lt;template&gt;
+                      &lt;button on-tap="processClick"&gt;Cliquez-ici&lt;/button&gt;
+                  &lt;/template&gt;
+
+                  &lt;script&gt; // Api de l'élément
+                      Polymer({
+                          is: 'mon-element',
+                          processClick: function() {
+                              // Comportement lors du click
+                          }
+                      });
+                  &lt;/script&gt;
+              &lt;/dom-module&gt;
 
       section(data-bespoke-hash='resume')
         h2 Web Components
