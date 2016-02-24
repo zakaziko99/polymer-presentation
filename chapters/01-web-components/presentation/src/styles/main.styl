@@ -14,6 +14,14 @@ body
         &.slide-custom-01
             p
                 margin 0 55px 20px
+            .team-php
+                height 175px
+                img.pop-bottom
+                    transform: translate(0, 300px)
+                    transition transform .3s ease-out;
+                &.bespoke-bullet-active
+                    img.pop-bottom
+                        transform: translate(0, 0)
         &.slide-custom-05
             img
                 width 80%
@@ -21,6 +29,13 @@ body
             ul
                 li:before
                     top 11px
+        &.slide-custom-25
+            h2, h3
+                margin-left -250px
+            h3
+                margin-top -30px
+                font-size 40px
+                text-transform uppercase
         &.slide-custom-27
             ul
                 li
@@ -33,3 +48,29 @@ body
                             display block
                             color #7FCED0
                             font-size 0.750em
+        &.slide-custom-28
+            p
+                position relative
+                width 250px
+                height 166px
+                img
+                    position absolute
+                    top 50%
+                    left 50%
+                    width 0
+                    transform translate(-50%, -50%)
+                    transition width .3s ease-out;
+                &.bespoke-bullet-active
+                    img
+                        width 250px
+    .slide-home-picture-ie
+        background-image url("/images/ie-no.gif")
+        background-position -50px center
+        background-size cover
+    .slide-home-picture-hero
+        background-image url("/images/hurray.gif")
+        background-size cover
+    .slide-home-picture-whew
+        background-image url("/images/whew.gif")
+        background-position -150px center
+        background-size cover

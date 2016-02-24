@@ -17,10 +17,12 @@ html
           div.logo
             img(src="images/polymer.svg" width="300" alt="Polymer Logo")
           h1.much-bigger Formation Polymer
-            small (version &gt;= 1.x)
+            small (version 1.x)
           div.bottom-main
             p Présenté par <strong>Zakaria Amarifi</strong>
             p 2016 &copy; <span>Development Media 73</span>
+
+      section(data-bespoke-backdrop='slide-home-picture-ie', data-bespoke-hash='ie-no')
 
       section.slide-custom-01(data-bespoke-hash='polymer-cest-quoi')
         h2.bullet C'est quoi Polymer ?
@@ -34,9 +36,8 @@ html
           span.ln-return et c'est en ...
         p.bullet
           span ... JavaScript
-        p.bullet
-          span Pas de panique !!!
-          span.ln-return y'a pas mal du HTML et un peu de CSS aussi :P
+        div.team-php.bullet
+          img.pop-bottom(src="images/php-team-what.png" width="300" alt="What ???")
 
       section(data-bespoke-hash='sommaire')
         h2.bullet Sommaire
@@ -126,9 +127,11 @@ html
                 &lt;/table&gt;
             &lt;/div&gt;
 
-      section(data-bespoke-hash='new-wc-hero')
-        h2.bullet Web Component Hero
-        pre.bullet.no-scroll
+      section(data-bespoke-backdrop='slide-home-picture-hero', data-bespoke-hash='new-wc-hero')
+        h2 Web Component Hero
+
+      section(data-bespoke-hash='new-wc-code')
+        pre.no-scroll
           code.language-markup.
             &lt;link rel="import" href="mon-datepicker.html" /&gt;
         pre.bullet.no-scroll
@@ -321,7 +324,6 @@ html
 
       section(data-bespoke-hash='compatibilite')
         h2 Compatibilité
-        p.bullet  Le site <a href="http://caniuse.com">http://caniuse.com</a>
         pre.bullet.no-scroll
           code.language-javascript.
             if (document.registerElement) {       // Custom Elements supportés
@@ -333,6 +335,11 @@ html
             if ('import' in document.createElement('link')) {
                 // HTML Imports supportés
             }
+        p.bullet  Le site <a href="http://caniuse.com">http://caniuse.com</a>
+
+      section.slide-custom-25(data-bespoke-backdrop='slide-home-picture-whew', data-bespoke-hash='whew')
+        h2 Polyfills de
+        h3 Polymer
 
       section(data-bespoke-hash='resume')
         h2 Web Components
@@ -369,9 +376,18 @@ html
               span Les Web Components, pourquoi, comment, pour qui ? avec <strong>Raphaël Rougeron</strong>
               small https://www.youtube.com/watch?v=ZcZWtP1-9HQ
 
-      section(data-bespoke-hash='final')
-        h2 &lt;thats-all-folks /&gt;
+      section(data-bespoke-hash='gitlab')
+        h2 Dépot GITLAB
+        br
+        br
+        br
+        a(src="http://gitlab.dm73.net/dmtalk/polymer")
+          img.gitlab(src="images/gitlab.png" width="40" alt="Gitlab")
+          span http://gitlab.dm73.net/dmtalk/polymer
+
+      section.slide-custom-28(data-bespoke-hash='final')
+        h2.bullet &lt;thats-all-folks /&gt;
         p.bullet
-          img(src="images/web-components.svg" width="120" alt="Web Components")
+          img(src="images/web-components.svg" width="200" alt="Web Components")
 
     script(src='build/build.js')
