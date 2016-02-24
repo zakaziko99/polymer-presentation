@@ -36,9 +36,8 @@ html
           span.ln-return et c'est en ...
         p.bullet
           span ... JavaScript
-        p.bullet
-          span Pas de panique !!!
-          span.ln-return y'a pas mal du HTML et un peu de CSS aussi :P
+        div.team-php.bullet
+          img.pop-bottom(src="images/php-team-what.png" width="300" alt="What ???")
 
       section(data-bespoke-hash='sommaire')
         h2.bullet Sommaire
@@ -325,7 +324,6 @@ html
 
       section(data-bespoke-hash='compatibilite')
         h2 Compatibilité
-        p.bullet  Le site <a href="http://caniuse.com">http://caniuse.com</a>
         pre.bullet.no-scroll
           code.language-javascript.
             if (document.registerElement) {       // Custom Elements supportés
@@ -337,6 +335,11 @@ html
             if ('import' in document.createElement('link')) {
                 // HTML Imports supportés
             }
+        p.bullet  Le site <a href="http://caniuse.com">http://caniuse.com</a>
+
+      section.slide-custom-25(data-bespoke-backdrop='slide-home-picture-whew', data-bespoke-hash='whew')
+        h2 Polyfills de
+        h3 Polymer
 
       section(data-bespoke-hash='resume')
         h2 Web Components
