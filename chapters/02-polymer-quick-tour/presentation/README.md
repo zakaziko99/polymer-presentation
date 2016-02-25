@@ -3,13 +3,13 @@
 > Une présentation sur l'histoire des composants web, créée à l'aide de l'outil [Bespoke.js](http://markdalgleish.com/projects/bespoke.js)
 
 ## Sommaire
-* Enregistrement des éléments et cycle de vies
-* Déclaration des propriétés
-* Local DOM
-* Événements
+* Création d'un élément personalisé
+* Propriétés et attributs
+* Local DOM et Light DOM
+* Style et CSS
 * Data Binding
-* Comportements (Behaviours)
-* Méthodes Helper
+* Événements
+* Catalogue d'éléments Polymer
 
 ## Voir la présentation en local
 
