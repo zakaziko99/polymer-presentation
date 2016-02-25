@@ -25,45 +25,31 @@ html
       section(data-bespoke-hash='accueil')
         h2.bullet Pourquoi Polymer
         ul
-          li Librairie pour créer nos propres éléments
+          li Librairie pour créer FACILEMENT nos propres éléments
           li Polyfills pour les technologies Web Components
-          li Son approche et son catalogue d'éléments est de loin
+          li Son approche et son catalogue d'éléments personalisés est de loin
             br
             span LA MEILLEURE
 
-      section(data-bespoke-hash='install')
+      section(data-bespoke-hash='pre-requis')
         h2.bullet Premier pas
-        p.bullet  Pré-requis
-          br
-          span Node.js
-          br
-          span Bower
+        div.bullet
+          p Pré-requis
+          div.logos-set
+            img(src="images/nodejs.svg" width="150" alt="Nodejs Logo")
+            img(src="images/bower.svg" width="150" alt="Bower Logo")
+
+      section(data-bespoke-hash='install')
+        h2.bullet Terminal
         pre.bullet.language-bash.no-scroll
           code.language-bash.
-            $ npm install -g bower
+            $ npm install -g bower polyserve
         pre.bullet.language-bash.no-scroll
           code.language-bash.
             $ bower init
         pre.bullet.language-bash.no-scroll
           code.language-bash.
-            $ bower install --save Polymer/polymer#^1.2.0
-
-      section(data-bespoke-hash='code-main-page')
-        h2 Page principale
-        h3.bullet index.html
-        pre.bullet.no-scroll.streched-code
-          code.language-markup.
-            &lt;!DOCTYPE html&gt;
-            &lt;html&gt;
-                &lt;head&gt;
-                    &lt;script src="bower_components/webcomponentsjs/webcomponents.min.js"&gt;&lt;/script&gt;
-                    &lt;link rel="import" href="mon-element.html"&gt;
-                &lt;/head&gt;
-
-                &lt;body&gt;
-                    &lt;mon-element&gt;&lt;/mon-element&gt;
-                &lt;/body&gt;
-            &lt;/html&gt;
+            $ bower install --save Polymer/polymer
 
       section.slide-custom-01(data-bespoke-hash='code-element')
         h2 Page élément
@@ -87,6 +73,23 @@ html
                     });
                 &lt;/script&gt;
             &lt;/dom-module&gt;
+
+      section(data-bespoke-hash='code-main-page')
+        h2 Page principale
+        h3.bullet index.html
+        pre.bullet.no-scroll.streched-code
+          code.language-markup.
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+                &lt;head&gt;
+                    &lt;script src="bower_components/webcomponentsjs/webcomponents.min.js"&gt;&lt;/script&gt;
+                    &lt;link rel="import" href="mon-element.html"&gt;
+                &lt;/head&gt;
+
+                &lt;body&gt;
+                    &lt;mon-element&gt;&lt;/mon-element&gt;
+                &lt;/body&gt;
+            &lt;/html&gt;
 
       section.slide-custom-01(data-bespoke-hash='properties-1')
         h2 Propriétés
@@ -163,11 +166,11 @@ html
                       :host {
                           background: yellow;
                       }
-                      h1 {
+                      h2 {
                           color: red; /* marche pas */
                       }
-                      :content h1 {
-                          color: green; /* si ça va marcher */
+                      ::content h2 {
+                          color: magenta; /* si ça va marcher */
                       }
                   &lt;/style&gt;
 
