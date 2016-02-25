@@ -1,0 +1,62 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="mon-element">
+    <style> /* Style isolé pour l'élément */
+        h1 {
+            color: red;
+        }
+        :host {
+            display: inline-block;
+            background: yellow;
+            padding: 20px;
+        }
+        h2 {
+            color: red; /* marche pas */
+        }
+        ::content h2 {
+            color: magenta; /* si ça va marcher */
+        }
+    </style>
+
+    <template> <!-- Markup de l'élément -->
+        <h1>Mon nom est {{nom}}, {{prenom}} {{nom}}</h1>
+        <div class="header">
+            <content select="h2"></content>
+        </div>
+        <div class="paragraphe">
+            <content select="p"></content>
+        </div>
+
+        <button on-tap="processClick">Cliquez-ici</button>
+    </template>
+
+    <script> // Api de l'élément
+        Polymer({
+            is: 'mon-element',
+            listeners: {
+                'hidden-changed': 'checkDisplay'
+            },
+            properties: {
+                prenom: {
+                    type: String,
+                    value: 'James'
+                },
+                nom: {
+                    type: String,
+                    value: 'Bond'
+                },
+                hidden: {
+                    type:   Boolean,
+                    value:  false,
+                    notify: true
+                }
+            },
+            checkDisplay: function() {
+                this.style.display = this.hidden ? 'none': '';
+            },
+            processClick: function() {
+                alert('Button clicked !!!')
+            }
+        });
+    </script>
+</dom-module>

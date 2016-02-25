@@ -1,0 +1,20 @@
+{
+  "name": "Démo Polymer",
+  "authors": [
+    "Zakaria Amarifi <z.amarifi@dm73.net>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.3.0"
+  }
+}
