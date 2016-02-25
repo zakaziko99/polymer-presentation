@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Démo Polymer</title>
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+</head>
+<body>
+    <template id="templateMonElement">
+        <style>
+            h1 {
+                color: red;
+            }
+        </style>
+
+        <h1>Mon H1 personnalisé</h1>
+    </template>
+
+    <script>
+        var proto = Object.create(HTMLElement.prototype);
+        proto.createdCallback = function() {
+            var template = document.querySelector('#templateMonElement');
+            var clone    = document.importNode(template.content, true);
+            var root     = this.createShadowRoot();
+
+            root.appendChild(clone);
+        }
+
+        document.registerElement('mon-element', {
+            prototype: proto
+        });
+
+        document.body.appendChild(document.createElement('mon-element'));
+    </script>
+</body>
+</html>
