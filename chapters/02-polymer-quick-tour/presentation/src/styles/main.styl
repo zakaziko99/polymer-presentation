@@ -29,6 +29,21 @@ body
                             display block
                             color #7FCED0
                             font-size 0.750em
+        &.slide-custom-28
+            p
+                position relative
+                width 250px
+                height 166px
+                img
+                    position absolute
+                    top 50%
+                    left 50%
+                    width 0
+                    transform translate(-50%, -50%)
+                    transition width .3s ease-out;
+                &.bespoke-bullet-active
+                    img
+                        width 250px
         .logos-set
             margin 20px
             border-radius 10px
