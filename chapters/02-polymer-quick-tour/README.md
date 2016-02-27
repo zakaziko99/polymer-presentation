@@ -11,7 +11,7 @@
 * Événements
 * Catalogue d'éléments Polymer
 
-## Pré-requisa
+## Pré-requis
 
 Assurez-vous d'avoir les modules suivants installés:
 
