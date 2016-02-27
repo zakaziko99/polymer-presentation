@@ -13,5 +13,5 @@ basé sur Polymer et Material Design
 
 
 [@zakaria]:mailto:z.amarifi@dm73.net
-[@chapitre01]:chapters/01-web-components/presentation
-[@chapitre02]:chapters/02-polymer-quick-tour/presentation
+[@chapitre01]:chapters/01-web-components
+[@chapitre02]:chapters/02-polymer-quick-tour

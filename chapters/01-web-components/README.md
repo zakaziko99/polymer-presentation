@@ -1,4 +1,4 @@
-![](src/images/web-components.png)
+![](presentation/src/images/web-components.png)
 # Chapitre 01: Les composants web (Web Components)
 > Une présentation sur l'histoire des composants web, créée à l'aide de l'outil [Bespoke.js](http://markdalgleish.com/projects/bespoke.js)
 
@@ -19,7 +19,7 @@ Premièrement, assurez-vous d'avoir les modules suivants installés:
 2. [Bower](http://bower.io): `npm install -g bower` avec `sudo` pour les utilisateurs Linux
 3. [Gulp](http://gulpjs.com): `npm install -g gulp` avec `sudo` pour les utilisateurs Linux
 
-Ensuite, installez les dépendances en exécutant la commande suivante
+Ensuite, installez les dépendances en exécutant les commandes suivantes
 
 ```sh
 cd chapters/01-web-components/presentation
