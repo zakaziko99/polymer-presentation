@@ -1,0 +1,264 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Formation Polymer: Chapitre 3 - Structure et Organisation
+
+    link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900')
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+
+    article
+
+      section.slide-home(data-bespoke-backdrop='slide-home-container', data-bespoke-hash='chapitre')
+        div.container-home
+          h3.top-main Formation Polymer 2016
+          div.logo
+            img(src="images/polymer.svg" width="220" alt="Polymer Logo")
+          h1 <span class="chapter">Chapitre 3</span> <br>Structure et Organisation
+          div.bottom-main
+            p Présenté par <strong>Zakaria Amarifi</strong>
+            p 2016 &copy; <span>Development Media 73</span>
+
+      section(data-bespoke-hash='accueil')
+        h2.bullet Rien à avoir avec Polymer
+        ul
+          li Pourquoi pencher sur la structure de nos projets (Symfony surtout)
+          //- li Polyfills pour les technologies Web Components
+          //- li Son approche et son catalogue d'éléments personalisés est de loin
+          //-   br
+          //-   span LA MEILLEURE
+
+      //- section(data-bespoke-hash='pre-requis')
+      //-   h2.bullet Premier pas
+      //-   div.bullet
+      //-     p Pré-requis
+      //-     div.logos-set
+      //-       img(src="images/nodejs.svg" width="150" alt="Nodejs Logo")
+      //-       img(src="images/bower.svg" width="150" alt="Bower Logo")
+
+      //- section(data-bespoke-hash='install')
+      //-   h2.bullet Terminal
+      //-   pre.bullet.language-bash.no-scroll
+      //-     code.language-bash.
+      //-       $ npm install -g bower
+      //-   pre.bullet.language-bash.no-scroll
+      //-     code.language-bash.
+      //-       $ bower init
+      //-   pre.bullet.language-bash.no-scroll
+      //-     code.language-bash.
+      //-       $ bower install --save Polymer/polymer
+
+      //- section.slide-custom-01(data-bespoke-hash='code-element')
+      //-   h2 Page élément
+      //-   h3.bullet mon-element.html
+      //-   pre.bullet.no-scroll.streched-code
+      //-     code.language-markup.
+      //-       &lt;link rel="import" href="bower_components/polymer/polymer.html"&gt;
+
+      //-       &lt;dom-module id="mon-element"&gt;
+      //-           &lt;style&gt; /* Style isolé pour l'élément */
+      //-               h1 { color: red }
+      //-           &lt;/style&gt;
+
+      //-           &lt;template&gt; &lt;!-- Markup de l'élément --&gt;
+      //-               &lt;h1&gt;Mon H1 personalisé&lt;/h1&gt;
+      //-           &lt;/template&gt;
+
+      //-           &lt;script&gt; // Api de l'élément
+      //-               Polymer({
+      //-                   is: 'mon-element'
+      //-               });
+      //-           &lt;/script&gt;
+      //-       &lt;/dom-module&gt;
+
+      //- section(data-bespoke-hash='code-main-page')
+      //-   h2 Page principale
+      //-   h3.bullet index.html
+      //-   pre.bullet.no-scroll.streched-code
+      //-     code.language-markup.
+      //-       &lt;!DOCTYPE html&gt;
+      //-       &lt;html&gt;
+      //-           &lt;head&gt;
+      //-               &lt;script src="bower_components/webcomponentsjs/webcomponents.min.js"&gt;&lt;/script&gt;
+      //-               &lt;link rel="import" href="mon-element.html"&gt;
+      //-           &lt;/head&gt;
+
+      //-           &lt;body&gt;
+      //-               &lt;mon-element&gt;&lt;/mon-element&gt;
+      //-           &lt;/body&gt;
+      //-       &lt;/html&gt;
+
+      //- section.slide-custom-01(data-bespoke-hash='properties-1')
+      //-   h2 Propriétés
+      //-   h3.bullet mon-element.html
+      //-   pre.bullet.no-scroll.streched-code
+      //-     code.language-markup.
+      //-       &lt;dom-module id="mon-element"&gt;
+      //-           &lt;template&gt; &lt;!-- Markup de l'élément --&gt;
+      //-               &lt;p&gt;C'est &lt;span&gt;{{author}}&lt;/span&gt; qui l'a fait !!!&lt;/p&gt;
+      //-           &lt;/template&gt;
+
+      //-           &lt;script&gt; // Api de l'élément
+      //-               Polymer({
+      //-                   is: 'mon-element',
+      //-                   properties: {   // Déclarer une propriété
+      //-                       author: {
+      //-                           type: String,
+      //-                           value: "Zakaria"
+      //-                       }
+      //-                   }
+      //-               });
+      //-           &lt;/script&gt;
+      //-       &lt;/dom-module&gt;
+
+      //- section.slide-custom-02(data-bespoke-hash='properties-1')
+      //-   h2 Propriétés
+      //-   h3 mon-element.html
+      //-   pre.bullet.no-scroll.streched-code
+      //-     code.language-markup.
+      //-       &lt;dom-module id="mon-element"&gt;
+      //-           &lt;template&gt; &lt;!-- Markup de l'élément --&gt;
+      //-               &lt;p&gt;C'est &lt;span&gt;{{author}}&lt;/span&gt; qui l'a fait !!!&lt;/p&gt;
+      //-           &lt;/template&gt;
+      //-           ...
+      //-       &lt;/dom-module&gt;
+      //-   h3.bullet index.html
+      //-   pre.bullet.no-scroll.streched-code
+      //-     code.language-markup.
+      //-       &lt;body&gt;
+      //-           &lt;mon-element author="Badr"&gt;&lt;/mon-element&gt;
+      //-       &lt;/body&gt;
+
+      //- section.slide-custom-03(data-bespoke-hash='content-tag')
+      //-   h2 Récupérer le contenu
+      //-   div.bullet
+      //-     h3 index.html
+      //-     pre.no-scroll.streched-code
+      //-       code.language-markup.
+      //-         &lt;mon-element&gt;
+      //-             &lt;h1&gt; Titre de mon élément &lt;/h1&gt;
+      //-             &lt;p&gt; Description de mon élément &lt;/p&gt;
+      //-         &lt;/mon-element&gt;
+      //-   div.bullet
+      //-     h3 mon-element.html
+      //-     pre.no-scroll.streched-code
+      //-       code.language-markup.
+      //-         &lt;dom-module id="mon-element"&gt;
+      //-             &lt;template&gt; &lt;!-- Markup de l'élément --&gt;
+      //-                 &lt;content&gt;
+      //-                     &lt;!-- Ici on récupère les éléments introduits ---&gt;
+      //-                 &lt;/content&gt;
+      //-             &lt;/template&gt;
+      //-             ...
+      //-         &lt;/dom-module&gt;
+
+      //- section.slide-custom-04(data-bespoke-hash='styles')
+      //-   h2 Style et CSS
+      //-   div.bullet
+      //-     h3 mon-element.html
+      //-     pre.no-scroll.streched-code
+      //-       code.language-markup.
+      //-         &lt;dom-module id="mon-element"&gt;
+      //-             &lt;style&gt; /* CSS de l'élément */
+      //-                 :host {
+      //-                     background: yellow;
+      //-                 }
+      //-                 h2 {
+      //-                     color: red; /* marche pas */
+      //-                 }
+      //-                 ::content h2 {
+      //-                     color: magenta; /* si ça va marcher */
+      //-                 }
+      //-             &lt;/style&gt;
+
+      //-             &lt;template&gt;
+      //-                 &lt;content&gt; &lt;/content&gt;
+      //-             &lt;/template&gt;
+      //-         &lt;/dom-module&gt;
+
+      //- section.slide-custom-04(data-bespoke-hash='data-binding')
+      //-   h2 Data Binding
+      //-   div.bullet
+      //-     h3 mon-element.html
+      //-     pre.no-scroll.streched-code
+      //-       code.language-markup.
+      //-         &lt;dom-module id="mon-element"&gt;
+      //-             &lt;script&gt; // Api de l'élément
+      //-                 Polymer({
+      //-                     is: 'mon-element',
+      //-                     properties: {
+      //-                         hidden: {
+      //-                             type:   Boolean,
+      //-                             value:  false,
+      //-                             notify: true
+      //-                         }
+      //-                     }
+      //-                 });
+      //-             &lt;/script&gt;
+      //-         &lt;/dom-module&gt;
+
+      //- section.slide-custom-04(data-bespoke-hash='events')
+      //-   h2 Évènements
+      //-   div.bullet
+      //-     h3 mon-element.html
+      //-     pre.no-scroll.streched-code
+      //-       code.language-markup.
+      //-         &lt;dom-module id="mon-element"&gt;
+      //-             &lt;template&gt;
+      //-                 &lt;button on-tap="processClick"&gt;Cliquez-ici&lt;/button&gt;
+      //-             &lt;/template&gt;
+
+      //-             &lt;script&gt; // Api de l'élément
+      //-                 Polymer({
+      //-                     is: 'mon-element',
+      //-                     processClick: function() {
+      //-                         // Comportement lors du click
+      //-                     }
+      //-                 });
+      //-             &lt;/script&gt;
+      //-         &lt;/dom-module&gt;
+
+      //- section(data-bespoke-hash='catalogue')
+      //-   h2 Catalogue d'éléments Polymer
+      //-   a(href="https://elements.polymer-project.org") https://elements.polymer-project.org
+
+      //- section(data-bespoke-backdrop='slide-home-picture-mind-blowing', data-bespoke-hash='mind-blowing')
+
+      //- section.slide-custom-27(data-bespoke-hash='links')
+      //-   h2 Liens utiles
+      //-   ul
+      //-     li
+      //-       a(src="http://webcomponents.org/")
+      //-         span  Tutsplus (Get Started with Polymer) by <strong>Jeremy McPeak</strong>
+      //-         small https://code.tutsplus.com/courses/get-started-with-polymer
+      //-     li
+      //-       a(src="https://www.youtube.com/watch?v=CdV0VGYhKXk&list=PLLnpHn493BHGhoGAb2PRKzv4Zw3QoatK-")
+      //-         span Polymer 1.0 Tutorials by <strong>LevelUpTuts</strong>
+      //-         small https://www.youtube.com/watch?v=CdV0VGYhKXk&amp;list=PLLnpHn493BHGhoGAb2PRKzv4Zw3QoatK-
+
+      section(data-bespoke-hash='gitlab')
+        h2 Dépot GITLAB
+        br
+        br
+        br
+        a(src="http://gitlab.dm73.net/dmtalk/polymer")
+          img.gitlab(src="images/gitlab.png" width="40" alt="Gitlab")
+          span http://gitlab.dm73.net/dmtalk/polymer
+        br
+        a(src="http://gitlab.dm73.net/dmtalk/polymer/tree/master/chapters/03-structure-organisation/presentation")
+          span Présentation
+          small http://gitlab.dm73.net/dmtalk/polymer/tree/master/chapters/03-structure-organisation/presentation
+        //- br
+        //- a(src="http://gitlab.dm73.net/dmtalk/polymer/tree/master/chapters/02-polymer-quick-tour/demo")
+        //-   span Démo
+        //-   small http://gitlab.dm73.net/dmtalk/polymer/tree/master/chapters/02-polymer-quick-tour/demo
+
+      section.slide-custom-28(data-bespoke-hash='final')
+        h2.bullet &lt;thats-all-folks /&gt;
+        p.bullet
+          img(src="images/polymer.svg" width="120" alt="Polymer")
+
+    script(src='build/build.js')
