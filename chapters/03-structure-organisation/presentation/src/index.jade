@@ -1,36 +1,37 @@
 doctype html
 html
-  head
-    meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-    title Formation Polymer: Chapitre 3 - Structure et Organisation
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+        title Formation Polymer: Chapitre 3 - Structure et Organisation
 
-    link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900')
-    link(rel='stylesheet', type='text/css', href='build/build.css')
+        link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900')
+        link(rel='stylesheet', type='text/css', href='build/build.css')
 
-  body
+    body
 
-    article
+        article
 
-      section.slide-home(data-bespoke-backdrop='slide-home-container', data-bespoke-hash='chapitre')
-        div.container-home
-          h3.top-main Formation Polymer 2016
-          div.logo
-            img(src="images/polymer.svg" width="220" alt="Polymer Logo")
-          h1 <span class="chapter">Chapitre 3</span> <br>Structure et Organisation
-          div.bottom-main
-            p Présenté par <strong>Zakaria Amarifi</strong>
-            p 2016 &copy; <span>Development Media 73</span>
+            section.slide-home(data-bespoke-backdrop='slide-home-container', data-bespoke-hash='chapitre')
+                div.container-home
+                    h3.top-main Formation Polymer 2016
+                    div.logo
+                        img(src="images/polymer.svg" width="220" alt="Polymer Logo")
+                    h1 <span class="chapter">Chapitre 3</span> <br>Structure et Organisation
+                    div.bottom-main
+                        p Présenté par <strong>Zakaria Amarifi</strong>
+                        p 2016 &copy; <span>Development Media 73</span>
 
-      section(data-bespoke-hash='accueil')
-        h2.bullet Rien à avoir avec Polymer
-        div.banned-polymer
-        ul
-          li Pourquoi pencher sur la structure de nos projets (Symfony surtout)
-          //- li Polyfills pour les technologies Web Components
-          //- li Son approche et son catalogue d'éléments personalisés est de loin
-          //-   br
-          //-   span LA MEILLEURE
+            section(data-bespoke-hash='accueil')
+                h2.bullet Rien à avoir avec Polymer
+                div.banned-polymer
+                    img(src="images/polymer.svg" width="220" alt="Polymer Logo")
+                ul
+                    li Pourquoi pencher sur la structure de nos projets (Symfony surtout)
+            //- li Polyfills pour les technologies Web Components
+            //- li Son approche et son catalogue d'éléments personalisés est de loin
+            //-   br
+            //-   span LA MEILLEURE
 
       //- section(data-bespoke-hash='pre-requis')
       //-   h2.bullet Premier pas
@@ -240,26 +241,26 @@ html
       //-         span Polymer 1.0 Tutorials by <strong>LevelUpTuts</strong>
       //-         small https://www.youtube.com/watch?v=CdV0VGYhKXk&amp;list=PLLnpHn493BHGhoGAb2PRKzv4Zw3QoatK-
 
-      section(data-bespoke-hash='gitlab')
-        h2 Dépot GITLAB
-        br
-        br
-        br
-        a(src="http://gitlab.dm73.net/dmtalk/polymer")
-          img.gitlab(src="images/gitlab.png" width="40" alt="Gitlab")
-          span http://gitlab.dm73.net/dmtalk/polymer
-        br
-        a(src="http://gitlab.dm73.net/dmtalk/polymer/tree/master/chapters/03-structure-organisation/presentation")
-          span Présentation
-          small http://gitlab.dm73.net/dmtalk/polymer/tree/master/chapters/03-structure-organisation/presentation
-        //- br
-        //- a(src="http://gitlab.dm73.net/dmtalk/polymer/tree/master/chapters/02-polymer-quick-tour/demo")
-        //-   span Démo
-        //-   small http://gitlab.dm73.net/dmtalk/polymer/tree/master/chapters/02-polymer-quick-tour/demo
-
-      section.slide-custom-28(data-bespoke-hash='final')
-        h2.bullet &lt;thats-all-folks /&gt;
-        p.bullet
-          img(src="images/polymer.svg" width="120" alt="Polymer")
+        section(data-bespoke-hash='gitlab')
+            h2 Dépot GITLAB
+            br
+            br
+            br
+            a(src="http://gitlab.dm73.net/dmtalk/polymer")
+                img.gitlab(src="images/gitlab.png" width="40" alt="Gitlab")
+                span http://gitlab.dm73.net/dmtalk/polymer
+            br
+            a(src="http://gitlab.dm73.net/dmtalk/polymer/tree/master/chapters/03-structure-organisation/presentation")
+                span Présentation
+                small http://gitlab.dm73.net/dmtalk/polymer/tree/master/chapters/03-structure-organisation/presentation
+            //- br
+            //- a(src="http://gitlab.dm73.net/dmtalk/polymer/tree/master/chapters/02-polymer-quick-tour/demo")
+            //-   span Démo
+            //-   small http://gitlab.dm73.net/dmtalk/polymer/tree/master/chapters/02-polymer-quick-tour/demo
+  
+        section.slide-custom-28(data-bespoke-hash='final')
+            h2.bullet &lt;thats-all-folks /&gt;
+            p.bullet
+                img(src="images/polymer.svg" width="120" alt="Polymer")
 
     script(src='build/build.js')
